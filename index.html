@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Form Data Mahasiswa</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 30px; }
+    input { padding: 6px; width: 200px; }
+    button { padding: 6px 16px; cursor: pointer; }
+    table { border-collapse: collapse; width: 400px; }
+    th { background-color: #eee; }
+  </style>
+</head>
+<body>
+
+  <h2>Form Data Mahasiswa</h2>
+
+  <label>NIM</label>
+  <input type="text" id="nim"><br><br>
+
+  <label>Nama</label>
+  <input type="text" id="nama"><br><br>
+
+  <button id="tombolAdd">Add</button>
+
+  <br><br>
+  <table border="1" cellpadding="8">
+    <thead>
+      <tr>
+        <th>NIM</th>
+        <th>NAMA</th>
+      </tr>
+    </thead>
+    <tbody id="isiTabel">
+    </tbody>
+  </table>
+
+  <script>
+    const inputNim = document.getElementById("nim");
+    const inputNama = document.getElementById("nama");
+    const tombolAdd = document.getElementById("tombolAdd");
+    const isiTabel = document.getElementById("isiTabel");
+
+    tombolAdd.addEventListener("click", function () {
+      const nim = inputNim.value;
+      const nama = inputNama.value;
+
+      if (nim === "" || nama === "") {
+        alert("NIM dan Nama harus diisi ya!");
+        return;
+      }
+
+      const barisBaru = document.createElement("tr");
+      barisBaru.innerHTML = "<td>" + nim + "</td><td>" + nama + "</td>";
+      isiTabel.appendChild(barisBaru);
+
+      inputNim.value = "";
+      inputNama.value = "";
+    });
+  </script>
+
+</body>
+</html>
