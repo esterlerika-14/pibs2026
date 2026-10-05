@@ -2,38 +2,121 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Form Data Mahasiswa</title>
   <style>
-    body { font-family: Arial, sans-serif; margin: 30px; }
-    input { padding: 6px; width: 200px; }
-    button { padding: 6px 16px; cursor: pointer; }
-    table { border-collapse: collapse; width: 400px; }
-    th { background-color: #eee; }
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      min-height: 100vh;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .kartu {
+      background: white;
+      width: 100%;
+      max-width: 450px;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    }
+
+    h2 {
+      text-align: center;
+      margin-top: 0;
+      color: #333;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: bold;
+      color: #555;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 16px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 15px;
+    }
+
+    input:focus {
+      outline: none;
+      border-color: #667eea;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background: #667eea;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #5568d3;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 25px;
+    }
+
+    th {
+      background: #667eea;
+      color: white;
+      padding: 10px;
+    }
+
+    td {
+      padding: 10px;
+      border-bottom: 1px solid #eee;
+    }
+
+    tbody tr:nth-child(even) {
+      background: #f5f6ff;
+    }
   </style>
 </head>
 <body>
 
-  <h2>Form Data Mahasiswa</h2>
+  <div class="kartu">
+    <h2>Form Data Mahasiswa</h2>
 
-  <label>NIM</label>
-  <input type="text" id="nim"><br><br>
+    <label>NIM</label>
+    <input type="text" id="nim" placeholder="Masukkan NIM">
 
-  <label>Nama</label>
-  <input type="text" id="nama"><br><br>
+    <label>Nama</label>
+    <input type="text" id="nama" placeholder="Masukkan Nama">
 
-  <button id="tombolAdd">Add</button>
+    <button id="tombolAdd">Add</button>
 
-  <br><br>
-  <table border="1" cellpadding="8">
-    <thead>
-      <tr>
-        <th>NIM</th>
-        <th>NAMA</th>
-      </tr>
-    </thead>
-    <tbody id="isiTabel">
-    </tbody>
-  </table>
+    <table>
+      <thead>
+        <tr>
+          <th>NIM</th>
+          <th>NAMA</th>
+        </tr>
+      </thead>
+      <tbody id="isiTabel">
+      </tbody>
+    </table>
+  </div>
 
   <script>
     const inputNim = document.getElementById("nim");
