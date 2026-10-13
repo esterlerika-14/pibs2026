@@ -1,146 +1,134 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Form Data Mahasiswa</title>
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+    <meta charset+"UTF-8">
 
-    body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #667eea, #764ba2);
-      min-height: 100vh;
-      margin: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .kartu {
-      background: white;
-      width: 100%;
-      max-width: 450px;
-      padding: 30px;
-      border-radius: 16px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
-    }
-
-    h2 {
-      text-align: center;
-      margin-top: 0;
-      color: #333;
-    }
-
-    label {
-      display: block;
-      margin-bottom: 6px;
-      font-weight: bold;
-      color: #555;
-    }
-
-    input {
-      width: 100%;
-      padding: 10px;
-      margin-bottom: 16px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      font-size: 15px;
-    }
-
-    input:focus {
-      outline: none;
-      border-color: #667eea;
-    }
-
-    button {
-      width: 100%;
-      padding: 12px;
-      background: #667eea;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      font-size: 16px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    button:hover {
-      background: #5568d3;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 25px;
-    }
-
-    th {
-      background: #667eea;
-      color: white;
-      padding: 10px;
-    }
-
-    td {
-      padding: 10px;
-      border-bottom: 1px solid #eee;
-    }
-
-    tbody tr:nth-child(even) {
-      background: #f5f6ff;
-    }
-  </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+    <title>Profil Ester Lerika Marbun</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+    
+    
+    <!-- BAGIAN HEADER -->
+    <header>
+        <div class="header">
 
-  <div class="kartu">
-    <h2>Form Data Mahasiswa</h2>
+            <div class="foto-profil">
+                <img src="foto-ester.jpg" alt="Foto Profil Ester">
+            </div>
 
-    <label>NIM</label>
-    <input type="text" id="nim" placeholder="Masukkan NIM">
+            <div class="logo">
+                <h2>Profil Ester Lerika Marbun</h2>
+            </div>
 
-    <label>Nama</label>
-    <input type="text" id="nama" placeholder="Masukkan Nama">
+        </div>
+    </header>
 
-    <button id="tombolAdd">Add</button>
 
-    <table>
-      <thead>
-        <tr>
-          <th>NIM</th>
-          <th>NAMA</th>
-        </tr>
-      </thead>
-      <tbody id="isiTabel">
-      </tbody>
-    </table>
-  </div>
+    <!-- BAGIAN NAV -->
+    <nav>
+        <div class="nav">
+            <ul>
+                <li><a href="#" onclick="tampilkanKonten('biodata')">Biodata</a></li>
+                <li><a href="#" onclick="tampilkanKonten('pendidikan')">Pendidikan</a></li>
+                <li><a href="#" onclick="tampilkanKonten('pengalaman')">Pengalaman</a></li>
+                <li><a href="#" onclick="tampilkanKonten('keahlian')">Keahlian</a></li>
+                <li><a href="#" onclick="tampilkanKonten('publikasi')">Publikasi</a></li>
+            </ul>
+        </div>
+    </nav>
 
-  <script>
-    const inputNim = document.getElementById("nim");
-    const inputNama = document.getElementById("nama");
-    const tombolAdd = document.getElementById("tombolAdd");
-    const isiTabel = document.getElementById("isiTabel");
+    <!-- BAGIAN SECTION -->
+     <section>
+        <div class="section" id="konten">
+            <h2>Biodata</h2>
+            <p><b>NIM:</b> 2025081025</p>
+            <p><b>Nama:</b> Ester Lerika Marbun</p>
+            <p><b>Agama:</b> Katolik</p>
+            <p><b>Tanggal Lahir:</b> 14 Agustus 2007</p>
+            <p><b>Tempat Lahir:</b> Tangerang Selatan</p>
+            <p><b>No. Telepon:</b> +628812164329</p>
+        </div>
+    </section>
 
-    tombolAdd.addEventListener("click", function () {
-      const nim = inputNim.value;
-      const nama = inputNama.value;
 
-      if (nim === "" || nama === "") {
-        alert("NIM dan Nama harus diisi ya!");
-        return;
-      }
+    <!-- BAGIAN ASIDE -->
+    <aside>
+        <div class="aside">
+            <h2>Hobi</h2>
+            <p>Menggambar</p>
+            <p>Bernyanyi</p>
+            <p>Tidur</p>
+        </div>
+    </aside>
 
-      const barisBaru = document.createElement("tr");
-      barisBaru.innerHTML = "<td>" + nim + "</td><td>" + nama + "</td>";
-      isiTabel.appendChild(barisBaru);
+    <!-- BAGIAN FOOTER -->
+    
+    <footer>
+        <div class="footer">
+            <p>
+                <a href="https://www.instagram.com/esterlerika/"
+                target="_blank">
+                    Instagram
+                </a>
+                |
+                <a href="https://www.linkedin.com/in/ester-lerika-1351b8337/"
+                target="_blank">
+                    LinkedIn
+                </a>
+            </p>
+            <p>&copy; 2026 Profil Ester Lerika Marbun</p>
+        </div>
+    </footer>
 
-      inputNim.value = "";
-      inputNama.value = "";
-    });
-  </script>
+
+
+    <script>
+        function tampilkanKonten(menu) {
+            const konten = document.getElementById("konten");
+
+            if (menu === "biodata") {
+                konten.innerHTML = `
+                    <h2>Biodata</h2>
+                    <p><b>NIM:</b> 2025081025</p>
+                    <p><b>Nama:</b> Ester Lerika Marbun</p>
+                    <p><b>Agama:</b> Katolik</p>
+                    <p><b>Tanggal Lahir:</b> 14 Agustus 2007</p>
+                    <p><b>Tempat Lahir:</b> Tangerang Selatan</p>
+                    <p><b>No. Telepon:</b> +628812164329</p>
+                `;
+            } else if (menu === "pendidikan") {
+                konten.innerHTML = `
+                    <h2>Pendidikan</h2>
+                    <p><b>Universitas:</b> Universitas Pembangunan Jaya</p>
+                    <p><b>Program Studi:</b> Sistem Informasi</p>
+                    <p><b>Mahasiswa Aktif:</b> Tahun 2025 - Sekarang</p>
+                `;
+            } else if (menu === "pengalaman") {
+                konten.innerHTML = `
+                    <h2>Pengalaman</h2>
+                    <p>Pengurus Himpunan Mahasiswa SIF</p>
+                    <p>Panitia Jaya Stock Club </p>
+                    <p>Student Ambasador UPJ 2025 - Sekarang </p>
+                    <p>Pengurus Keluarga Mahasiswa Katolik_KMK </p>
+                `;
+            } else if (menu === "keahlian") {
+                konten.innerHTML = `
+                    <h2>Keahlian</h2>
+                    <p>Paduan Suara</p>
+                    <p>Menggambar dan desain</p>
+                    <p>Microsoft Office</p>
+                `;
+            } else if (menu === "publikasi") {
+                konten.innerHTML = `
+                    <h2>Publikasi</h2>
+                    <p>Belum ada publikasi yang dikeluarkan. Namun saya pernah membuat beberapa untuk di jadikan sebatas tugas kuliah</p>
+                `;
+            }
+        }
+    </script>
 
 </body>
 </html>

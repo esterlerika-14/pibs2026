@@ -1,0 +1,239 @@
+
+/* DASAR-DASAR */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+    color: #333333;
+}
+
+
+
+/* BAGIAN HEADER */
+
+header {
+    background-color: #1D4533;
+    color: #ffffff;
+    padding: 15px 25px;
+    border-radius: 12px 12px 0 0;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 15px;
+}
+
+.foto-profil img {
+    width: 75px;
+    height: 75px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #F9D2BA;
+}
+
+.logo h2 {
+    font-size: 22px;
+    margin: 0;
+}
+
+
+
+/* FOTO PROFIL LEBIH BESAR DI HP */
+
+@media screen and (max-width: 600px) {
+
+    .foto-profil img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .logo h2 {
+        font-size: 24px;
+    }
+
+    .header {
+        gap: 18px;
+    }
+
+}
+
+
+
+
+/* BAGIAN NAV */
+
+nav {
+    background-color: #F7EAE0;
+    padding: 15px;
+}
+
+.nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav li a {
+    display: block;
+    padding: 10px 15px;
+    color: #1D4533;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.nav li a:hover {
+    background-color: #1D4533;
+    color: #ffffff;
+}
+
+
+
+/* BAGIAN SECTION */
+section {
+    background-color: #F9D2BA;
+    padding: 25px;
+    min-height: 200px;
+}
+
+.section h2 {
+    color: #5E3122;
+    margin-top: 0;
+}
+
+.section p {
+    line-height: 1.8;
+    margin: 8px 0;
+}
+
+
+
+/* BAGIAN ASIDE */
+
+aside {
+    background-color: #F7EAE0;
+    padding: 20px;
+}
+
+.aside h2 {
+    color: #1D4533;
+    margin-top: 0;
+}
+
+
+/* 6. BAGIAN FOOTER */
+
+footer {
+    background-color: #5E3122;
+    color: #ffffff;
+    padding: 15px;
+    text-align: center;
+    border-radius: 0 0 12px 12px;
+}
+
+.footer p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+
+
+/* UNTUK LAPTOP KECIL DAN TABLET */
+
+@media screen and (max-width: 900px) {
+
+    body {
+        padding: 15px;
+    }
+
+    header {
+        padding: 18px;
+    }
+
+    section {
+        padding: 20px;
+    }
+
+    .logo h2 {
+        font-size: 21px;
+    }
+
+}
+
+/* UNTUK SMARTPHONE */
+
+@media screen and (max-width: 600px) {
+
+    body {
+        padding: 8px;
+    }
+
+    .header {
+        gap: 15px;
+    }
+
+    .foto-profil img {
+        width: 105px;
+        height: 105px;
+    }
+
+    .logo h2 {
+        font-size: 22px;
+    }
+
+    .nav ul {
+        flex-direction: column;
+    }
+
+    section,
+    aside {
+        padding: 15px;
+    }
+
+    footer {
+        padding: 12px;
+    }
+
+}
+
+
+
+/* TRANSISI AGAR TAMPILAN LEBIH HALUS */
+
+header,
+nav,
+section,
+aside,
+footer,
+.foto-profil img,
+.logo h2,
+.nav li a {
+    transition: all 0.3s ease;
+}
+
+.foto-profil img {
+    max-width: 100%;
+}
+
+
+.footer a {
+    color: #F7EAE0;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer a:hover {
+    color: #F9D2BA;
+    text-decoration: underline;
+}
